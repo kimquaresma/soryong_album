@@ -1,0 +1,96 @@
+header {
+    width: 400px;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(45deg, rgb(253, 189, 37), rgb(255, 255, 187));
+
+    h1 {
+        font: bold 50px/1 "orbitron";
+        color: #fff;
+        letter-spacing: 1px;
+        position: absolute;
+        left: 20%;
+        top: 50%;
+        transform: translateY(-200%);
+
+        &::before {
+            content: "CHIHUAHUA";
+            font: 14px/1 "orbitron";
+            color: #fff;
+            letter-spacing: 2px;
+            position: absolute;
+            left: 10px;
+            top: 140px;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 200px;
+            height: 2px;
+            background: #fff;
+            margin-top: 20px;
+        }
+    }
+    
+    ul {
+        position: absolute;
+        left: 100px;
+        bottom: 100px;
+
+        
+        li {
+            a {
+                font-size: 30px;
+                color: #fff;
+                display: flex;
+
+                span {
+                    display: inline-block;
+                    transform: scale(0.7);
+                    transform-origin: left center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $web){
+    header {
+        width: 100%;
+        height: 80px;
+        position: relative;
+
+        h1  {
+            font: bold 24px/1 "orbitron";
+            transform: translateY(-50%);
+            left: 50px;
+
+            &::before, &::after {
+                display: none;
+            }
+        }
+
+        ul {
+            left: 400px;
+            bottom: 18px;
+        }
+    }
+}
+
+@media screen and (max-width: $mobile){
+    header {
+        h1 {
+            font-size: 20px;
+        }
+        ul li {
+            margin-left: 3px;
+    
+            a span {
+                display: none;
+            }
+        }
+    }
+}
